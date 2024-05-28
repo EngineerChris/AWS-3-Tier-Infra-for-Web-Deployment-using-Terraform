@@ -5,7 +5,7 @@ resource "aws_lb" "alb" {
   security_groups    = [var.alb_sg]  # Replace with your security group ID
   subnets            = [var.public_subnet1, var.public_subnet2]  # Replace with your subnet IDs
 
-  enable_deletion_protection = false  # Set to true if you want to enable deletion protection
+  enable_deletion_protection = false  # Set to true if deletion protection is a requirement.
   
     tags = merge(var.tags, {
     Name = "${var.tags["project"]}-${var.tags["application"]}-${var.tags["environment"]}-alb"
